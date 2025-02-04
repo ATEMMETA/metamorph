@@ -37,17 +37,19 @@ if st.button("Connect/Disconnect API"):
         st.warning("Please enter an API key.")
 
 
-
 import streamlit as st
 import requests
 
+Create a title for the app
+st.title("AI API Connector")
+
+Create a button to get data
 if st.button("Get Data"):
     try:
-        response = requests.get("http://192.168.3.201:8000/data")  # Use 127.0.0.1 here!
+        response = requests.get("http://192.168.3.201:8000/data")
         response.raise_for_status()
         data = response.json()
         st.write(data)
     except requests.exceptions.RequestException as e:
         st.error(f"Error fetching data: {e}")
         st.write("Failed to retrieve data. Check the error message above.")
-
