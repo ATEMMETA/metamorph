@@ -44,7 +44,7 @@ st.title("AI API Connector")
 
 if st.button("Get Data"):
     try:
-        response = requests.get("http://192.168.3.201:8000/data")
+        response = requests.get("http://127.0.0.1:8000/data")
         response.raise_for_status()
         data = response.json()
         st.write(data)
