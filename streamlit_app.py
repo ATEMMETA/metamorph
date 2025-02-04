@@ -36,15 +36,18 @@ if st.button("Connect/Disconnect API"):
     else:
         st.warning("Please enter an API key.")
 
+
 import streamlit as st
 import requests
 
 Call the FastAPI endpoint
 response = requests.get("http://localhost:8000/data")
 
-Display the data in Streamlit
-st.write(response.json())
-
-
+Check if the request was successful
+if response.status_code == 200:
+    # Display the data in Streamlit
+    st.write(response.json())
+else:
+    st.write("Failed to retrieve data")
 
 
