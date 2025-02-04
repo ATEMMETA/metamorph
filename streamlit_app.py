@@ -40,10 +40,8 @@ if st.button("Connect/Disconnect API"):
 import streamlit as st
 import requests
 
-Create a title for the app
 st.title("AI API Connector")
 
-Create a button to get data
 if st.button("Get Data"):
     try:
         response = requests.get("http://192.168.3.201:8000/data")
