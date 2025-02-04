@@ -40,14 +40,13 @@ if st.button("Connect/Disconnect API"):
 import streamlit as st
 import requests
 
-Call the FastAPI endpoint
-response = requests.get("http://localhost:8000/data")
-
-Check if the request was successful
-if response.status_code == 200:
-    # Display the data in Streamlit
-    st.write(response.json())
-else:
-    st.write("Failed to retrieve data")
-
+if st.button("Get Data"):  # Button to trigger the API call
+    try:
+        response = requests.get("http://localhost:8000/data")
+        response.raise_for_status() # Raise an exception for bad status codes (4xx or 5xx)
+        data = response.json()
+        st.write(data)
+    except requests.exceptions.RequestException as e:
+        st.error(f"Error fetching data: {e}")  # Display the error message in Streamlit
+        st.write("Failed to retrieve data. Check the error message above.")
 
