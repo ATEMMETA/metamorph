@@ -37,16 +37,17 @@ if st.button("Connect/Disconnect API"):
         st.warning("Please enter an API key.")
 
 
+
 import streamlit as st
 import requests
 
-if st.button("Get Data"):  # Button to trigger the API call
+if st.button("Get Data"):
     try:
-        response = requests.get("http://localhost:8000/data")
-        response.raise_for_status() # Raise an exception for bad status codes (4xx or 5xx)
+        response = requests.get("http://127.0.0.1:8000/data")  # Use 127.0.0.1 here!
+        response.raise_for_status()
         data = response.json()
         st.write(data)
     except requests.exceptions.RequestException as e:
-        st.error(f"Error fetching data: {e}")  # Display the error message in Streamlit
+        st.error(f"Error fetching data: {e}")
         st.write("Failed to retrieve data. Check the error message above.")
 
