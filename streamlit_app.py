@@ -37,7 +37,6 @@ if st.button("Connect/Disconnect API"):
         st.warning("Please enter an API key.")
 
 
-
 import streamlit as st
 import requests
 
@@ -45,7 +44,7 @@ st.title("AI API Connector")
 
 if st.button("Get Data"):
     try:
-        response = requests.get("http://127.0.0.1:8001/data", timeout=5)
+        response = requests.get("http://0.0.0.0:8001/data", timeout=5)
         response.raise_for_status()
         data = response.json()
         st.write(data)
