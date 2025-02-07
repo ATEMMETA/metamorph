@@ -3,20 +3,20 @@ import requests
 
 st.title("AI API Connector")
 
-Create a text input for API key
+# Create a text input for API key
 api_key = st.text_input("Enter API Key", type="password")
 
-Create a dropdown menu for API selection
+# Create a dropdown menu for API selection
 api_options = ["Gemini API", "Our AI API"]
 selected_api = st.selectbox("Select API", api_options)
 
-Create a text input for Gemini API chat
+# Create a text input for Gemini API chat
 gemini_chat = st.text_area("Gemini API Chat", height=150)
 
-Create a text input for Our AI chat
+# Create a text input for Our AI chat
 our_ai_chat = st.text_area("Our AI Chat", height=150)
 
-Create a new text input with a unique label
+# Create a new text input with a unique label
 new_text_input = st.text_input("Enter some text for API")
 
 # Create a status indicator. Initialize as disconnected.  Define it *before* the button.
