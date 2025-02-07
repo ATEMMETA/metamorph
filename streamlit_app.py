@@ -1,4 +1,4 @@
-import streamlit as st
+weimport streamlit as st
 
 # Create a title for the app
 st.title("AI API Connector")
@@ -56,15 +56,16 @@ if st.button("Get Data"):
         st.error(f"Request error: {e}")
 
 
+
 import streamlit as st
 import requests
 
 st.title("AI API Connector")
 
-Create a text input
+# Create a text input
 text_input = st.text_input("Enter some text")
 
-Create a button to send the text to FastAPI
+# Create a button to send the text to FastAPI
 if st.button("Send to FastAPI"):
     try:
         response = requests.post("http://127.0.0.1:8000/process_text", json={"text": text_input}, timeout=5)
@@ -77,3 +78,4 @@ if st.button("Send to FastAPI"):
         st.error(f"Timeout error: {e}")
     except requests.exceptions.RequestException as e:
         st.error(f"Request error: {e}")
+text_input = st.text_input("Enter some text")
