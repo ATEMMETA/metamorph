@@ -1,4 +1,4 @@
-weimport streamlit as st
+import streamlit as st
 
 # Create a title for the app
 st.title("AI API Connector")
