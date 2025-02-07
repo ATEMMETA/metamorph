@@ -41,10 +41,11 @@ if st.button("Connect/Disconnect API"):
 
 
 
+
 import streamlit as st
 import requests
 
-st.title("AI API Connector")
+#st.title("AI API Connector") #duplicate title
 
 # Create a text input
 text_input = st.text_input("Enter some text")
