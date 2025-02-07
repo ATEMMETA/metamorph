@@ -42,6 +42,10 @@ if st.button("Connect/Disconnect API"):
 for i in range(5):
     text_input = st.text_input(f"Input {i+1}", key=f"input_{i}")  # Unique key using f-string
 
+for item in my_data:  # my_data is a list of dictionaries, each with an 'id'
+    st.text_input(item['name'], key=f"input_{item['id']}")
+
+
 
 
 
