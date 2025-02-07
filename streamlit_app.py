@@ -39,20 +39,6 @@ if st.button("Connect/Disconnect API"):
     else:
         st.warning("Please enter an API key.")
 
-for i in range(5):
-    text_input = st.text_input(f"Input {i+1}", key=f"input_{i}")  # Unique key using f-string
-
-for item in my_data:  # my_data is a list of dictionaries, each with an 'id'
-    st.text_input(item['name'], key=f"input_{item['id']}")
-
-if some_condition:
-    key_part = "part_a"
-else:
-    key_part = "part_b"
-
-st.text_input("Enter some text", key=f"my_input_{key_part}")
-
-
 
 
 
