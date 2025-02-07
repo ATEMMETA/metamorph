@@ -45,6 +45,13 @@ for i in range(5):
 for item in my_data:  # my_data is a list of dictionaries, each with an 'id'
     st.text_input(item['name'], key=f"input_{item['id']}")
 
+if some_condition:
+    key_part = "part_a"
+else:
+    key_part = "part_b"
+
+st.text_input("Enter some text", key=f"my_input_{key_part}")
+
 
 
 
